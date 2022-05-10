@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_week_view: // 주달력 이벤트
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new WeekViewFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new Week_View_Fragment());
                 fragmentTransaction.commit();
                 return true;
 
