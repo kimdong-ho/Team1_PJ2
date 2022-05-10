@@ -16,11 +16,11 @@ public class Week_Calendar_Fragment extends Fragment {
     private static final String ARG_PARAM2 = "param2"; // 키값
     private static final String ARG_PARAM3 = "param3"; // 키값
 
-    private int mYear = 0;
-    private int mMonth = 0;
-    private int mDay = 0;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
 
-    GridView daysGV;
+    GridView gridView;
 
     public Week_Calendar_Fragment() {
 
@@ -49,7 +49,8 @@ public class Week_Calendar_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { // 강의자료 참고
         View view = inflater.inflate(R.layout.week_calendar, container, false);
-        GridView daysGV = (GridView)view.findViewById(R.id.days);
+        //GridView gridView = (GridView)view.findViewById(R.id.days);
+        gridView =view.findViewById(R.id.days);
 
 
         String[] dayLabels = showDay();
@@ -60,9 +61,9 @@ public class Week_Calendar_Fragment extends Fragment {
                         android.R.layout.simple_list_item_activated_1,
                         dayLabels);
 
-        daysGV.setAdapter(arrayAdapter);
-        daysGV.setSelection(0);
-        daysGV.setItemChecked(0, true);
+        gridView.setAdapter(arrayAdapter);
+        gridView.setSelection(0);
+        gridView.setItemChecked(0, true);
 
         //setOnItemClickListener(new AdapterView.OnItemClickListener() { // 클릭했을 때 토스트 메시지 출력
         //    @Override
