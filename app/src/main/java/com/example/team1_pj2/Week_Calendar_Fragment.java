@@ -57,9 +57,7 @@ public class Week_Calendar_Fragment extends Fragment {
 
         final ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(
-                        getActivity(),
-                        android.R.layout.simple_list_item_activated_1,
-                        dayLabels);
+                        getActivity(), android.R.layout.simple_list_item_activated_1, dayLabels);
 
         gridView.setAdapter(arrayAdapter);
         gridView.setSelection(0);

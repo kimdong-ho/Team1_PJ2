@@ -67,6 +67,8 @@ class Week_View_Fragment extends Fragment { // 키값
         ActionBar ab = ((AppCompatActivity)getActivity()).getSupportActionBar(); // 액션바 사용하기
         ab.setTitle(mYear+"년"+(mMonth+1)+"월"); // 현재 년월 표시
 
+
+
         weekVP2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() { // 필요한 메소드만 재정의 할 수 있게 하는 코드
 
             @Override
