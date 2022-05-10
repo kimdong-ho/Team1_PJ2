@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //activity_main xml과 연결
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, new Month_View_Fragment());
+        fragmentTransaction.add(R.id.fragment_container, new Month_View_Fragment()); //프래그먼트 생성
         fragmentTransaction.commit();
     }
 

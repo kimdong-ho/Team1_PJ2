@@ -16,9 +16,9 @@ import java.util.Calendar;
 
 public class Month_Calendar_Fragment extends Fragment {
 
-    private static final String Param1 = "YEAR";
-    private static final String Param2 = "MONTH";
-    private static final String Param3 = "DAY";
+    private static final String Param1 = "YEAR"; // 키값
+    private static final String Param2 = "MONTH"; // 키값
+    private static final String Param3 = "DAY"; // 키값
 
     private int mYear;
     private int mMonth;
@@ -29,7 +29,7 @@ public class Month_Calendar_Fragment extends Fragment {
     public Month_Calendar_Fragment() {
     }
 
-    public static Month_Calendar_Fragment newInstance(int year, int month, int day) {
+    public static Month_Calendar_Fragment newInstance(int year, int month, int day) { // 강의자료 참고
 
         Month_Calendar_Fragment fragment = new Month_Calendar_Fragment();
         Bundle args = new Bundle();
@@ -43,23 +43,23 @@ public class Month_Calendar_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.month_calendar, container, false);
+        View view = inflater.inflate(R.layout.month_calendar, container, false); // month_calendar xml과 연결되는 뷰 생성
 
-        ArrayList<DayItem> items = makeMonthCalendar(mYear, mMonth);
+        ArrayList<DayItem> items = makeMonthCalendar(mYear, mMonth); // 아이템이 들어가는 배열 생성
         mDayAdapter = new DayAdapter(getActivity(),items);
         mDayAdapter.setDaySelected(mDaySelected);
         GridView gridView = view.findViewById(R.id.days);
         gridView.setAdapter(mDayAdapter);
         gridView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // 아이템 클릭 이벤트
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int day = ((DayItem) mDayAdapter.getItem(position)).getDay();
                 mDayAdapter.setDaySelected(day);
                 mDayAdapter.notifyDataSetChanged();
                 Toast.makeText(getActivity(),
-                        mYear+"년"+(mMonth+1)+"월"+day+"일", Toast.LENGTH_SHORT).show();
+                        mYear+"년"+(mMonth+1)+"월"+day+"일", Toast.LENGTH_SHORT).show(); // 년 월 일 출력하는 토스트 메시지
 
             }
         });
@@ -79,7 +79,7 @@ public class Month_Calendar_Fragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-    }
+    } // 생명주기 관련 onResume Activity가 재개된 상태에 들어갈 때 callback 된다.
 
     private ArrayList<DayItem> makeMonthCalendar(int year, int month) {
         ArrayList<DayItem> items = new ArrayList<>();

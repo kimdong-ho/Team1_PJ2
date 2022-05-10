@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.Calendar;
 
 public class Week_Pager_Adapter extends FragmentStateAdapter {
-    private static int ITEM = 3000000;
+    private static int ITEM = 12 * 7 * 4 * 24;
 
     public Week_Pager_Adapter(Fragment fragment) {
         super(fragment);

@@ -49,7 +49,6 @@ class Week_View_Fragment extends Fragment { // 키값
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.week_view, container, false);
         ViewPager2 weekVP2 = view.findViewById(R.id.weekVPager);
         Week_Pager_Adapter adapter = new Week_Pager_Adapter(this);
