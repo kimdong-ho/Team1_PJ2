@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="weekVPager" type="id" />
+    <item name="action_month_view" type="id" />
+    <item name="action_week_view" type="id" />
 </resources>
