@@ -74,14 +74,14 @@ public class Week_Calendar_Fragment extends Fragment {
         return view;
     }
 
-    private String[] showDay() {
+    private String[] showDay() { // 배열 생성 보여지는 날의 배열
         String[] str = new String[7];
         int day = mDay;
 
         for (int i = 0; i < 7; i++) {
             switch (mMonth) {
                 case 1: //1월
-                    if (day >= 31) {
+                    if (day >= 31) {  // 1월은 31일까지 그 이후면 break
                         day = 1;
                     }
                     break;
@@ -140,16 +140,16 @@ public class Week_Calendar_Fragment extends Fragment {
             }
             str[i] = "" + day++;
         }
-        return str;
+        return str; // 값 반환
     }
 
     private ArrayList<EventItem> makeWeekCalendar() {
         ArrayList<EventItem> items = new ArrayList<EventItem>();
-        for (int j=0; j<24;j++) {
+        for (int j=0; j<24;j++) { // 24시간 * 7일인 배열
             for (int i = 0; i < 7; i++) {
                 items.add(new EventItem());
             }
         }
-        return items;
+        return items; // 아이템 값 반환
     }
 }

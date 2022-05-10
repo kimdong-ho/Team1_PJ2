@@ -12,59 +12,59 @@ public class Week_Pager_Adapter extends FragmentStateAdapter {
     }
 
     @Override
-    public Fragment createFragment(int position) {
+    public Fragment createFragment(int position) { // 프래그먼트 생성
         int year = 0;
         int month = 0;
         int day = 0;
-        year = 2022;
-        int year_days = 365;
+        int allday = position * 7; // 총 날의 수
+        int year_days = allday % 365; // 계산용 날의 수
 
-        if (year_days <= 31) {
+        if (year_days <= 31) { // 1월
             day = year_days;
             month = 1;
         }
-        else if (year_days <= 59) {
+        else if (year_days <= 59) { // 2월
             day = year_days - 31;
             month = 2;
         }
-        else if (year_days <= 90) {
+        else if (year_days <= 90) { // 3월
             day = year_days - 59;
             month = 3;
 
         }
-        else if (year_days <= 120) {
+        else if (year_days <= 120) { // 4월
             day = year_days - 90;
             month = 4;
         }
-        else if (year_days <= 151) {
+        else if (year_days <= 151) { // 5월
             day = year_days - 120;
             month = 5;
         }
-        else if (year_days <= 181) {
+        else if (year_days <= 181) { // 6월
             day = year_days - 151;
             month = 6;
         }
-        else if (year_days <= 212) {
+        else if (year_days <= 212) { // 7월
             day = year_days - 181;
             month = 7;
         }
-        else if (year_days <= 243) {
+        else if (year_days <= 243) { // 8월
             day = year_days - 212;
             month = 8;
         }
-        else if (year_days <= 273) {
+        else if (year_days <= 273) { // 9월
             day = year_days - 243;
             month = 9;
         }
-        else if (year_days <= 304) {
+        else if (year_days <= 304) { // 10월
             day = year_days - 273;
             month = 10;
         }
-        else if (year_days <= 334) {
+        else if (year_days <= 334) { // 11월
             day = year_days - 304;
             month = 11;
         }
-        else if (year_days <= 365){
+        else if (year_days <= 365){ // 12월
             day = year_days - 334;
             month = 12;
         }

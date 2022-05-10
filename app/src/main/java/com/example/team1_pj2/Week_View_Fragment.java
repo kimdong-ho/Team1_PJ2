@@ -75,61 +75,59 @@ class Week_View_Fragment extends Fragment { // 키값
                 int year = 0;
                 int month = 0;
                 int day = 0;
-                year = 2022;
-                int year_days = 365;
-
-                int totalDays = 7;
+                int allday = position * 7;
+                int year_days = allday % 365;
 
                 mYear = cal.get(Calendar.YEAR);
 
-                if (year_days <= 31) {
-                    day = year_days;
-                    month = 1;
+                if (year_days <= 31) { // 1월
+                    mDay = year_days;
+                    mMonth = 1;
                 }
-                else if (year_days <= 59) {
-                    day = year_days - 31;
-                    month = 2;
+                else if (year_days <= 59) { // 2월
+                    mDay = year_days - 31;
+                    mMonth = 2;
                 }
-                else if (year_days <= 90) {
-                    day = year_days - 59;
-                    month = 3;
+                else if (year_days <= 90) { // 3월
+                    mDay = year_days - 59;
+                    mMonth = 3;
 
                 }
-                else if (year_days <= 120) {
-                    day = year_days - 90;
-                    month = 4;
+                else if (year_days <= 120) { // 4월
+                    mDay = year_days - 90;
+                    mMonth = 4;
                 }
-                else if (year_days <= 151) {
-                    day = year_days - 120;
-                    month = 5;
+                else if (year_days <= 151) { // 5월
+                    mDay = year_days - 120;
+                    mMonth = 5;
                 }
-                else if (year_days <= 181) {
-                    day = year_days - 151;
-                    month = 6;
+                else if (year_days <= 181) { // 6월
+                    mDay = year_days - 151;
+                    mMonth = 6;
                 }
-                else if (year_days <= 212) {
-                    day = year_days - 181;
-                    month = 7;
+                else if (year_days <= 212) { // 7월
+                    mDay = year_days - 181;
+                    mMonth = 7;
                 }
-                else if (year_days <= 243) {
-                    day = year_days - 212;
-                    month = 8;
+                else if (year_days <= 243) { // 8월
+                    mDay = year_days - 212; 
+                    mMonth = 8;
                 }
-                else if (year_days <= 273) {
-                    day = year_days - 243;
-                    month = 9;
+                else if (year_days <= 273) { // 9월
+                    mDay = year_days - 243;
+                    mMonth = 9;
                 }
-                else if (year_days <= 304) {
-                    day = year_days - 273;
-                    month = 10;
+                else if (year_days <= 304) { // 10월
+                    mDay = year_days - 273;
+                    mMonth = 10;
                 }
-                else if (year_days <= 334) {
-                    day = year_days - 304;
-                    month = 11;
+                else if (year_days <= 334) { // 11월
+                    mDay = year_days - 304;
+                    mMonth = 11;
                 }
-                else if (year_days <= 365){
-                    day = year_days - 334;
-                    month = 12;
+                else if (year_days <= 365){ // 12월
+                    mDay = year_days - 334;
+                    mMonth = 12;
                 }
                 ab.setTitle(mYear +"년"+ mMonth +"월");
             }
@@ -139,7 +137,28 @@ class Week_View_Fragment extends Fragment { // 키값
     }
 
     public int calDays(int year, int month, int day) {
-        int total_days= 365;
-        return total_days;
+        int total_day= 0;
+        total_day += ( year - 1 ) * 365; // 저번 년도까지의 날의 수
+
+        int [] month_array = new int [12]; // 배열 생성
+        month_array[0] =31; // 1월
+        month_array[1] =28; // 2월
+        month_array[2] =31; // 3월
+        month_array[3] =30; // 4월
+        month_array[4] =31; // 5월
+        month_array[5] =30; // 6월
+        month_array[6] =31; // 7월
+        month_array[7] =31; // 8월
+        month_array[8] =30; // 9월
+        month_array[9] =31; // 10월
+        month_array[10] =30; // 11월
+        month_array[11] =31; // 12월
+
+        for (int i = 0; i < month - 1; i++){
+            total_day += month_array[i];
+        }
+        total_day += day; // 날으 수 증가
+
+        return total_day;
     }
 }
