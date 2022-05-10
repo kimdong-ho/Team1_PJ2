@@ -48,16 +48,18 @@ public class DayAdapter extends BaseAdapter {
         if (day !=0) {
             dayText.setText(day + "");
             if (day == DaySelected) {
-                convertView.setBackgroundColor(Color.CYAN);
-            } else {
-                convertView.setBackgroundColor(Color.WHITE);
+                convertView.setBackgroundColor(Color.CYAN); // 선택되었을 때 시안색으로 표시
             }
-        } else {
+            else {
+                convertView.setBackgroundColor(Color.WHITE); // 선택이 안되었을 때 흰색
+            }
+        }
+        else {
             dayText.setText("");
             convertView.setEnabled(false);
         }
 
-        convertView.setLayoutParams(new ViewGroup.LayoutParams(parent.getWidth()/7-1, parent.getHeight()/6-1));
+        convertView.setLayoutParams(new ViewGroup.LayoutParams(parent.getWidth()/6, parent.getHeight()/5));
 
         return convertView;
     }
