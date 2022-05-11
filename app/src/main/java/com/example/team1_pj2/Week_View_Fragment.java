@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import java.util.Calendar;
 
 
-class Week_View_Fragment extends Fragment { // 키값
+public class Week_View_Fragment extends Fragment { // 키값
 
     private static final String ARG_PARAM1 = "year";
     private static final String ARG_PARAM2 = "month";
