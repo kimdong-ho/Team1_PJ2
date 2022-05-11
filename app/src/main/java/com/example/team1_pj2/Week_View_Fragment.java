@@ -69,20 +69,19 @@ public class Week_View_Fragment extends Fragment { // 키값
 
 
         weekVP2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() { // 필요한 메소드만 재정의 할 수 있게 하는 코드
-
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                int year = 0;
-                int month = 0;
-                int day = 0;
+                //int year = 0;
+                //int month = 0;
+                //int day = 0;
                 int allday = position*7;
                 int year_days = allday%365;
 
                 //Calendar cal = Calendar.getInstance();
                 //mYear = cal.get(Calendar.YEAR); // 현재 년 가져오기
 
-                mYear = allday % 365;
+                mYear = allday / 365 + 1;
 
                 if (year_days <= 31) { // 1월 31일
                     mDay = year_days;
