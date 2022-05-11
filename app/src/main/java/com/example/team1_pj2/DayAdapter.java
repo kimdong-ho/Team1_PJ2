@@ -59,7 +59,7 @@ public class DayAdapter extends BaseAdapter {
             convertView.setEnabled(false);
         }
 
-        convertView.setLayoutParams(new ViewGroup.LayoutParams(parent.getWidth()/6, parent.getHeight()/5));
+        convertView.setLayoutParams(new ViewGroup.LayoutParams(parent.getWidth()/7-1, parent.getHeight()/6-1));
 
         return convertView;
     }
