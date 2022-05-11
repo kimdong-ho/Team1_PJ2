@@ -13,22 +13,25 @@ public class Week_Pager_Adapter extends FragmentStateAdapter {
 
     @Override
     public Fragment createFragment(int position) { // 프래그먼트 생성
-        int year = 0;
-        int month = 0;
-        int day = 0;
+        int year;
+        int month;
+        int day;
         int allday = position * 7; // 총 날의 수
         int year_days = allday % 365; // 계산용 날의 수
 
-        if (year_days <= 31) { // 1월
-            day = year_days;
+        Calendar cal = Calendar.getInstance();
+        year = cal.get(Calendar.YEAR); // 현재 년 가져오기
+
+        if (year_days <= 31) { // 1월 // 31일까지 1월 그 이후면은 2월로 넘어간다
+            day = year_days; // 1월은 31일
             month = 1;
         }
         else if (year_days <= 59) { // 2월
-            day = year_days - 31;
+            day = year_days - 31; // 2월은 day의 수에서 1월의 31일을 빼야한다
             month = 2;
         }
         else if (year_days <= 90) { // 3월
-            day = year_days - 59;
+            day = year_days - 59; // 똑같이 반복
             month = 3;
 
         }
@@ -64,15 +67,16 @@ public class Week_Pager_Adapter extends FragmentStateAdapter {
             day = year_days - 304;
             month = 11;
         }
-        else if (year_days <= 365){ // 12월
+        else { // 12월
             day = year_days - 334;
             month = 12;
         }
-        Week_Calendar_Fragment week = Week_Calendar_Fragment.newInstance(year, month, day);
+        Week_Calendar_Fragment week = Week_Calendar_Fragment.newInstance(year,month,day); // newInstance를 해야만 다음 프래그먼트가 재 생성 될 떄 newInstance() 메소드에서
+                                                                                          // set 해주는 bundle을 다시 받을 수 있다. 그러면 bundle을 또 생성할 필요 없이 기존의 것을 사용할 수 있다.
         return week;
     }
 
     public int getItemCount() {
         return ITEM;
-    }
+    } // 전체 아이템 개수 리턴
 }

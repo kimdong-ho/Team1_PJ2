@@ -51,6 +51,11 @@ public class Month_Calendar_Fragment extends Fragment {
         GridView gridView = view.findViewById(R.id.days);
         gridView.setAdapter(mDayAdapter);
         gridView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        //setChoiceMode(ListView.CHOICE_MODE_SINGLE); 리스트뷰의 아이템 선택을 한 개만 할 수 있게 설정합니다.
+
+
+
+                출처: https://ssscool.tistory.com/285 [시작]
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // 아이템 클릭 이벤트
             @Override

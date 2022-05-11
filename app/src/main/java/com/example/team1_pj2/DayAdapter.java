@@ -65,6 +65,7 @@ public class DayAdapter extends BaseAdapter {
     }
 
     public void setDaySelected(int day) {
+
         DaySelected = day;
     }
 }
