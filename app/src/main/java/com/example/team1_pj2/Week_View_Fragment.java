@@ -133,7 +133,6 @@ public class Week_View_Fragment extends Fragment { // 키값
                     mDay = year_days - 334;
                     mMonth = 12;
                 }
-                ActionBar ab = ((AppCompatActivity)getActivity()).getSupportActionBar();
                 ab.setTitle(mYear +"년"+ mMonth +"월");
             }
         });
