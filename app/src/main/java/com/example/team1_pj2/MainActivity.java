@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { // 메뉴 클릭 이벤트 처리
-        switch (item.getItemId()) {
+        int id = item.getItemId();
+        switch (id) {
             case R.id.action_month_view: // 월달력 이벤트
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, new Month_View_Fragment());
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment_container, new Week_View_Fragment());
                 fragmentTransaction.commit();
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
