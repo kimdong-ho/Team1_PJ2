@@ -56,7 +56,7 @@ class Week_View_Fragment extends Fragment { // 키값
 
         //int totaldays = 365;
         int totaldays = calDays(mYear,mMonth+1,mDay); // 1년의 총 날 수수
-       int number = totaldays/7;
+        int number = totaldays/7;
 
         Calendar cal = Calendar.getInstance();
         mYear = cal.get(Calendar.YEAR); // 현재 년
@@ -76,11 +76,13 @@ class Week_View_Fragment extends Fragment { // 키값
                 int year = 0;
                 int month = 0;
                 int day = 0;
-                int allday = position * 7;
-                int year_days = allday % 365;
+                int allday = position*7;
+                int year_days = allday%365;
 
-                Calendar cal = Calendar.getInstance();
-                mYear = cal.get(Calendar.YEAR); // 현재 년 가져오기
+                //Calendar cal = Calendar.getInstance();
+                //mYear = cal.get(Calendar.YEAR); // 현재 년 가져오기
+
+                mYear = allday % 365;
 
                 if (year_days <= 31) { // 1월 31일
                     mDay = year_days;
