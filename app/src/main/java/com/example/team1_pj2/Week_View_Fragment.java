@@ -54,8 +54,8 @@ class Week_View_Fragment extends Fragment { // 키값
         Week_Pager_Adapter adapter = new Week_Pager_Adapter(this); // Week_Pager_Adapter 생성
         weekVP2.setAdapter(adapter);
 
-        int totaldays = 365;
-        //int totaldays = calDays(mYear,mMonth+1,mDay); // 1년의 총 날 수수
+        //int totaldays = 365;
+        int totaldays = calDays(mYear,mMonth+1,mDay); // 1년의 총 날 수수
        int number = totaldays/7;
 
         Calendar cal = Calendar.getInstance();
