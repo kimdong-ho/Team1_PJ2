@@ -19,8 +19,10 @@ public class Week_Pager_Adapter extends FragmentStateAdapter {
         int allday = position * 7; // 총 날의 수
         int year_days = allday % 365; // 계산용 날의 수
 
-        Calendar cal = Calendar.getInstance();
-        year = cal.get(Calendar.YEAR); // 현재 년 가져오기
+        //Calendar cal = Calendar.getInstance();
+        //year = cal.get(Calendar.YEAR); // 현재 년 가져오기
+
+        year = allday%365;
 
         if (year_days <= 31) { // 1월 // 31일까지 1월 그 이후면은 2월로 넘어간다
             day = year_days; // 1월은 31일
