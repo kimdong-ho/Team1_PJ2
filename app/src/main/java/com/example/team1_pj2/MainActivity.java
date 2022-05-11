@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
                 return true;
 
-            default:
-                break;
-
         }
         return super.onOptionsItemSelected(item);
     }
