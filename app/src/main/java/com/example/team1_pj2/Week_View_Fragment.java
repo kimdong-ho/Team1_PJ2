@@ -48,9 +48,10 @@ public class Week_View_Fragment extends Fragment { // 키값
 
     // onCteateView 부분에 onCreate 메소드 안에서 사용할 코드를 적으면 된다.
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {  // onCreate 후에 회면을 구성할 때 호출되는 부분
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {  // onCreate 후에 회면을 구성할 때 호출되는 부분
         View view = inflater.inflate(R.layout.week_view, container, false); // week_view xml과 연결
-        ViewPager2 weekVP2 = view.findViewById(R.id.weekVPager);
+        ViewPager2 weekVP2 = view.findViewById(R.id.weekViewPager);
         Week_Pager_Adapter adapter = new Week_Pager_Adapter(this); // Week_Pager_Adapter 생성
         weekVP2.setAdapter(adapter);
 
@@ -61,7 +62,7 @@ public class Week_View_Fragment extends Fragment { // 키값
         Calendar cal = Calendar.getInstance();
         mYear = cal.get(Calendar.YEAR); // 현재 년
         mMonth = cal.get(Calendar.MONTH); // 현재 월
-        mDay = cal.get(Calendar.DATE); // 현재 월의 날짜
+        mDay = cal.get(Calendar.DAY_OF_MONTH); // 현재 월의 날짜
         weekVP2.setCurrentItem(number,false); // 특정페이지로 이동하고 싶을 때 쓰는 메소드 number = 프래그먼트 번호, false = 이동스크롤 여부
 
         ActionBar ab = ((AppCompatActivity)getActivity()).getSupportActionBar(); // 액션바 사용하기
